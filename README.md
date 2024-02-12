@@ -158,7 +158,7 @@ It's also possible to build libffi on Windows platforms with
 Microsoft's Visual C++ compiler.  In this case, use the msvcc.sh
 wrapper script during configuration like so:
 
-    path/to/configure CC=path/to/msvcc.sh CXX=path/to/msvcc.sh LD=link CPP="cl -nologo -EP" CPPFLAGS="-DFFI_BUILDING_DLL"
+    path/to/configure CC=path/to/msvcc.sh CXX=path/to/msvcc.sh LD=link CPP="cl -nologo -EP" CXXCPP="cl -nologo -EP" CPPFLAGS="-DFFI_BUILDING_DLL"
 
 For 64-bit Windows builds, use ``CC="path/to/msvcc.sh -m64"`` and
 ``CXX="path/to/msvcc.sh -m64"``.  You may also need to specify
@@ -203,9 +203,10 @@ See the git log for details at http://github.com/libffi/libffi.
 
     TBD - TBD
         Add support for wasm32.
-        Add support for HPPA64, and many HPPA fixes.
+        Add support for aarch64 branch target identification (bti).
         Add support for ARCv3: ARC32 & ARC64.
-        Many x86 Darwin fixes.
+        Add support for HPPA64, and many HPPA fixes.
+        Fixes for AIX, sparc64, and x86 Darwin fixes.
 
     3.4.4 Oct-23-2022
         Important aarch64 fixes, including support for linux builds
